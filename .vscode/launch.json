@@ -1,0 +1,129 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "J01016",
+      "request": "launch",
+      "mainClass": "J01016",
+      "projectName": "Java_7ad90546"
+    },
+    {
+      "type": "java",
+      "name": "J01014",
+      "request": "launch",
+      "mainClass": "J01014",
+      "projectName": "Java_7ad90546"
+    },
+    {
+      "type": "java",
+      "name": "J01013",
+      "request": "launch",
+      "mainClass": "J01013",
+      "projectName": "Java_7ad90546"
+    },
+    {
+      "type": "java",
+      "name": "J01012",
+      "request": "launch",
+      "mainClass": "J01012",
+      "projectName": "Java_7ad90546"
+    },
+    {
+      "type": "java",
+      "name": "J01011",
+      "request": "launch",
+      "mainClass": "J01011",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01010",
+      "request": "launch",
+      "mainClass": "J01010",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01009",
+      "request": "launch",
+      "mainClass": "J01009",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01008",
+      "request": "launch",
+      "mainClass": "J01008",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01007",
+      "request": "launch",
+      "mainClass": "J01007",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01006",
+      "request": "launch",
+      "mainClass": "J01006",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01005",
+      "request": "launch",
+      "mainClass": "J01005",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01004",
+      "request": "launch",
+      "mainClass": "J01004",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01003",
+      "request": "launch",
+      "mainClass": "J01003",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01002",
+      "request": "launch",
+      "mainClass": "J01002",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "type": "java",
+      "name": "J01001",
+      "request": "launch",
+      "mainClass": "J01001",
+      "projectName": "Java_da29e400"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "g:/My Drive/Code-Folder/C++/Project",
+      "program": "g:/My Drive/Code-Folder/C++/Project/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
