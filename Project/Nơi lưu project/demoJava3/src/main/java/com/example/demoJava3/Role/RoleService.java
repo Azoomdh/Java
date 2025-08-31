@@ -14,6 +14,10 @@ public class RoleService {
     @Autowired
     private RoleRepo roleRepo;
 
+    public Role getByName(String name){
+        return this.roleRepo.findByName("CLIENT").get(0);
+    }
+
     public Role getById(Long id){
         Optional<Role> optRole1= this.roleRepo.findById(id);
 
