@@ -12,10 +12,10 @@ public class NhanVien
 {
     private Long userId;
 
-    @Override
-    public void updateNotId(NhanVien o2) {
-        // không làm gì cả        
-    }
+    // @Override
+    // public void updateNotId(NhanVien o2) {
+    //     // không làm gì cả        
+    // }
 
     public NhanVien() {
     }

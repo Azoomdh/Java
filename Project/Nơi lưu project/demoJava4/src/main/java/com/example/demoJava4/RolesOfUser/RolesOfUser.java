@@ -12,11 +12,11 @@ public class RolesOfUser
 {
     private RolesOfUserKey rouKey;
 
-    @Override
-    public void updateNotId(RolesOfUser o2) {
-        // ko lam gi ca
-        return;
-    }
+    // @Override
+    // public void updateNotId(RolesOfUser o2) {
+    //     // ko lam gi ca
+    //     return;
+    // }
 
     public RolesOfUser(RolesOfUserKey rouKey) {
         this.rouKey = rouKey;

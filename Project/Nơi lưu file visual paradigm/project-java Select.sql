@@ -1,19 +1,19 @@
 SELECT id, name, diachi, sodienthoai, mota 
   FROM CuaHang;
-SELECT VatPhamid, MotLuotBanSanPhamid, soluong, gia 
-  FROM DsSanPhamTrongMotLuotBan;
-SELECT MotLuotNhapSanPhamid, VatPhamid, soluong, gia 
-  FROM DsSanPhamTrongMotLuotNhap;
-SELECT id, thoigian, sotien, lathanhtoantienmat, MotLuotBanSanPhamid 
+SELECT VatPhamid, MotLuotBanid, soluong, gia 
+  FROM DsspBan;
+SELECT MotLuotNhapid, VatPhamid, soluong, gia 
+  FROM DsspNhap;
+SELECT id, thoigian, sotien, lathanhtoantienmat, MotLuotBanid 
   FROM HoaDonBan;
-SELECT id, thoigian, sotien, lathanhtoantienmat, MotLuotNhapSanPhamid 
-  FROM HoaDonThanhToanNhap;
+SELECT id, thoigian, sotien, lathanhtoantienmat, MotLuotNhapid 
+  FROM HoaDonNhap;
 SELECT Userid 
   FROM KhachHang;
 SELECT id, thoigian, dathanhtoan, CuaHangid, KhachHangUserid, NhanVienUserid 
-  FROM MotLuotBanSanPham;
+  FROM MotLuotBan;
 SELECT id, thoigian, dathanhtoan, NhaCungCapid, CuaHangid, NhanVienUserid 
-  FROM MotLuotNhapSanPham;
+  FROM MotLuotNhap;
 SELECT id, name, address, sodienthoai, email, mota 
   FROM NhaCungCap;
 SELECT Userid 

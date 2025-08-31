@@ -18,15 +18,15 @@ public class User
     private String sodienthoai;
     private Boolean enabled;
     
-    @Override
-    public void updateNotId(User o2) {
-        this.id = o2.getId();
-        this.username = o2.getUsername();
-        this.password = o2.getPassword();
-        this.email = o2.getEmail();
-        this.sodienthoai = o2.getSodienthoai();
-        this.enabled = o2.getEnabled();
-    }
+    // @Override
+    // public void updateNotId(User o2) {
+    //     this.id = o2.getId();
+    //     this.username = o2.getUsername();
+    //     this.password = o2.getPassword();
+    //     this.email = o2.getEmail();
+    //     this.sodienthoai = o2.getSodienthoai();
+    //     this.enabled = o2.getEnabled();
+    // }
 
     public User(String username, String password, String email, String sodienthoai, Boolean enabled) {
         this.username = username;

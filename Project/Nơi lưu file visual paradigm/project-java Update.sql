@@ -5,35 +5,35 @@ UPDATE CuaHang SET
   mota = ? 
 WHERE
   id = ?;
-UPDATE DsSanPhamTrongMotLuotBan SET 
+UPDATE DsspBan SET 
   soluong = ?, 
   gia = ? 
 WHERE
-  VatPhamid = ? AND MotLuotBanSanPhamid = ?;
-UPDATE DsSanPhamTrongMotLuotNhap SET 
+  VatPhamid = ? AND MotLuotBanid = ?;
+UPDATE DsspNhap SET 
   soluong = ?, 
   gia = ? 
 WHERE
-  MotLuotNhapSanPhamid = ? AND VatPhamid = ?;
+  MotLuotNhapid = ? AND VatPhamid = ?;
 UPDATE HoaDonBan SET 
   thoigian = ?, 
   sotien = ?, 
   lathanhtoantienmat = ?, 
-  MotLuotBanSanPhamid = ? 
+  MotLuotBanid = ? 
 WHERE
   id = ?;
-UPDATE HoaDonThanhToanNhap SET 
+UPDATE HoaDonNhap SET 
   thoigian = ?, 
   sotien = ?, 
   lathanhtoantienmat = ?, 
-  MotLuotNhapSanPhamid = ? 
+  MotLuotNhapid = ? 
 WHERE
   id = ?;
 UPDATE KhachHang SET 
    
 WHERE
   Userid = ?;
-UPDATE MotLuotBanSanPham SET 
+UPDATE MotLuotBan SET 
   thoigian = ?, 
   dathanhtoan = ?, 
   CuaHangid = ?, 
@@ -41,7 +41,7 @@ UPDATE MotLuotBanSanPham SET
   NhanVienUserid = ? 
 WHERE
   id = ?;
-UPDATE MotLuotNhapSanPham SET 
+UPDATE MotLuotNhap SET 
   thoigian = ?, 
   dathanhtoan = ?, 
   NhaCungCapid = ?, 

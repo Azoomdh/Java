@@ -14,11 +14,11 @@ public class Role
     private String name;
     private String mota;
     
-    @Override
-    public void updateNotId(Role o2) {
-        this.name = o2.getName();
-        this.mota = o2.getMota();
-    }
+    // @Override
+    // public void updateNotId(Role o2) {
+    //     this.name = o2.getName();
+    //     this.mota = o2.getMota();
+    // }
 
     public Role(String name, String mota) {
         this.name = name;

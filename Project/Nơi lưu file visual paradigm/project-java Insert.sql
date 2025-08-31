@@ -10,9 +10,9 @@ VALUES
   ?, 
   ?, 
   ?);
-INSERT INTO DsSanPhamTrongMotLuotBan
+INSERT INTO DsspBan
   (VatPhamid, 
-  MotLuotBanSanPhamid, 
+  MotLuotBanid, 
   soluong, 
   gia) 
 VALUES 
@@ -20,8 +20,8 @@ VALUES
   ?, 
   ?, 
   ?);
-INSERT INTO DsSanPhamTrongMotLuotNhap
-  (MotLuotNhapSanPhamid, 
+INSERT INTO DsspNhap
+  (MotLuotNhapid, 
   VatPhamid, 
   soluong, 
   gia) 
@@ -35,19 +35,19 @@ INSERT INTO HoaDonBan
   thoigian, 
   sotien, 
   lathanhtoantienmat, 
-  MotLuotBanSanPhamid) 
+  MotLuotBanid) 
 VALUES 
   (?, 
   ?, 
   ?, 
   ?, 
   ?);
-INSERT INTO HoaDonThanhToanNhap
+INSERT INTO HoaDonNhap
   (id, 
   thoigian, 
   sotien, 
   lathanhtoantienmat, 
-  MotLuotNhapSanPhamid) 
+  MotLuotNhapid) 
 VALUES 
   (?, 
   ?, 
@@ -58,7 +58,7 @@ INSERT INTO KhachHang
   (Userid) 
 VALUES 
   (?);
-INSERT INTO MotLuotBanSanPham
+INSERT INTO MotLuotBan
   (id, 
   thoigian, 
   dathanhtoan, 
@@ -72,7 +72,7 @@ VALUES
   ?, 
   ?, 
   ?);
-INSERT INTO MotLuotNhapSanPham
+INSERT INTO MotLuotNhap
   (id, 
   thoigian, 
   dathanhtoan, 

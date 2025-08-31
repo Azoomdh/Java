@@ -45,7 +45,7 @@ public class MyUserDetails
         List<SimpleGrantedAuthority> dsAuthorities = new ArrayList<>();
 
         for(RolesOfUser rou1 : listRou1){
-            Role role1 = this.roleService.findById(rou1.getRouKey().getRoleId());
+            Role role1 = this.roleService.findById(rou1.getRouKey().getRoleid());
             String nameOfRole1 = role1.getName();
 
             SimpleGrantedAuthority sgAuth1 = new SimpleGrantedAuthority(nameOfRole1);

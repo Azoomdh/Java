@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class RolesOfUserKey {
-    private Long userId;
-    private Long roleId;
+    private Long Userid;
+    private Long Roleid;
     
     public RolesOfUserKey(Long userId, Long roleId) {
-        this.userId = userId;
-        this.roleId = roleId;
+        this.Userid = userId;
+        this.Roleid = roleId;
     }
 
     

@@ -32,8 +32,8 @@ public class RolesOfUserRepo
         PreparedStatementCreator psCreator = con->{
             PreparedStatement ps = con.prepareStatement(sql);
             
-            ps.setLong(1, tKey.getUserId());
-            ps.setLong(2, tKey.getRoleId());
+            ps.setLong(1, tKey.getUserid());
+            ps.setLong(2, tKey.getRoleid());
 
             return ps;
         };
@@ -79,8 +79,8 @@ public class RolesOfUserRepo
         PreparedStatementCreator psc = con->{
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setLong(1, t.getRouKey().getUserId());
-            ps.setLong(2, t.getRouKey().getRoleId());
+            ps.setLong(1, t.getRouKey().getUserid());
+            ps.setLong(2, t.getRouKey().getRoleid());
 
             return ps;
         };
@@ -105,8 +105,8 @@ public class RolesOfUserRepo
         PreparedStatementCreator psc = con->{
             PreparedStatement ps = con.prepareStatement(sql);
             
-            ps.setLong(1, t.getRouKey().getUserId());
-            ps.setLong(2, t.getRouKey().getRoleId());
+            ps.setLong(1, t.getRouKey().getUserid());
+            ps.setLong(2, t.getRouKey().getRoleid());
 
             return ps;
         };
@@ -127,8 +127,8 @@ public class RolesOfUserRepo
         PreparedStatementCreator psc = con->{
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setLong(1, tKey.getUserId());
-            ps.setLong(2, tKey.getRoleId());
+            ps.setLong(1, tKey.getUserid());
+            ps.setLong(2, tKey.getRoleid());
 
             return ps;
         };

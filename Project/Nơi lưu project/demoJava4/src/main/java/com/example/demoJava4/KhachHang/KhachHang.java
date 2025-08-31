@@ -12,11 +12,6 @@ public class KhachHang
 {
     private Long userId;
 
-    @Override
-    public void updateNotId(KhachHang o2) {
-        // không làm gì cả
-    }
-
     public KhachHang() {
     }
 

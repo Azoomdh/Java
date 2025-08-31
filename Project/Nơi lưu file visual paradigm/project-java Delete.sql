@@ -1,18 +1,18 @@
 DELETE FROM CuaHang 
   WHERE id = ?;
-DELETE FROM DsSanPhamTrongMotLuotBan 
-  WHERE VatPhamid = ? AND MotLuotBanSanPhamid = ?;
-DELETE FROM DsSanPhamTrongMotLuotNhap 
-  WHERE MotLuotNhapSanPhamid = ? AND VatPhamid = ?;
+DELETE FROM DsspBan 
+  WHERE VatPhamid = ? AND MotLuotBanid = ?;
+DELETE FROM DsspNhap 
+  WHERE MotLuotNhapid = ? AND VatPhamid = ?;
 DELETE FROM HoaDonBan 
   WHERE id = ?;
-DELETE FROM HoaDonThanhToanNhap 
+DELETE FROM HoaDonNhap 
   WHERE id = ?;
 DELETE FROM KhachHang 
   WHERE Userid = ?;
-DELETE FROM MotLuotBanSanPham 
+DELETE FROM MotLuotBan 
   WHERE id = ?;
-DELETE FROM MotLuotNhapSanPham 
+DELETE FROM MotLuotNhap 
   WHERE id = ?;
 DELETE FROM NhaCungCap 
   WHERE id = ?;
