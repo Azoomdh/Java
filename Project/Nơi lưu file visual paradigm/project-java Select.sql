@@ -24,6 +24,6 @@ SELECT Userid, Roleid
   FROM RolesOfUser;
 SELECT id, username, password, email, sodienthoai, enabled 
   FROM [User];
-SELECT id, ten, gia, donvicua1sanpham, mota 
+SELECT id, ten, gia, donvi, mota 
   FROM VatPham;
 

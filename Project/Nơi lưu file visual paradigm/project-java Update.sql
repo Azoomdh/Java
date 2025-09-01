@@ -81,7 +81,7 @@ WHERE
 UPDATE VatPham SET 
   ten = ?, 
   gia = ?, 
-  donvicua1sanpham = ?, 
+  donvi = ?, 
   mota = ? 
 WHERE
   id = ?;

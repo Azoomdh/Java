@@ -11,22 +11,22 @@ public class VatPham
     private Long id;
     private String ten;
     private Long gia;
-    private String donvicua1sanpham;
+    private String donvi;
     private String mota;
     
     public VatPham() {
     }
-    public VatPham(Long id, String ten, Long gia, String donvicua1sanpham, String mota) {
+    public VatPham(Long id, String ten, Long gia, String donvi, String mota) {
         this.id = id;
         this.ten = ten;
         this.gia = gia;
-        this.donvicua1sanpham = donvicua1sanpham;
+        this.donvi = donvi;
         this.mota = mota;
     }
-    public VatPham(String ten, Long gia, String donvicua1sanpham, String mota) {
+    public VatPham(String ten, Long gia, String donvi, String mota) {
         this.ten = ten;
         this.gia = gia;
-        this.donvicua1sanpham = donvicua1sanpham;
+        this.donvi = donvi;
         this.mota = mota;
     }
 

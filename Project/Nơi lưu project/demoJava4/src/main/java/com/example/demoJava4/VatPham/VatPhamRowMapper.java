@@ -17,10 +17,10 @@ public class VatPhamRowMapper
         Long id = ketquatrave.getLong("id");
         String ten = ketquatrave.getString("ten");
         Long gia = ketquatrave.getLong("gia");
-        String donvicua1sanpham = ketquatrave.getString("donvicua1sanpham");
+        String donvi = ketquatrave.getString("donvi");
         String mota = ketquatrave.getString("mota");
 
-        VatPham vatPham1 = new VatPham(id, ten, gia, donvicua1sanpham, mota);
+        VatPham vatPham1 = new VatPham(id, ten, gia, donvi, mota);
 
         return vatPham1;
     }
