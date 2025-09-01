@@ -14,4 +14,8 @@ public interface ServiceInterface <T, TKey>
     public T update(TKey tKey, T t);
 
     public Boolean delete(TKey tKey);
+
+    // public Boolean checkDaTonTai(T t);
+
+    // public Boolean checkHopLe(T t);
 }
