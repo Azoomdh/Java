@@ -54,11 +54,16 @@ public class DsspBanService
 
     @Override
     public DsspBan update(DsspBanKey tKey, DsspBan t) {
-        DsspBan dsspBan1 = this.findById(tKey);
-
-        if(dsspBan1==null){
+        
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
             return null;
         }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
+            return null;
+        }
+
         return this.dsspBanRepo.update(tKey, t);
     }
 

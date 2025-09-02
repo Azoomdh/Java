@@ -51,10 +51,12 @@ public class KhachHangService
     @Override
     public KhachHang update(Long tKey, KhachHang t) {
 
-        KhachHang kh1 = this.findById(tKey);
-
-        // nếu không tồn tại thì không update
-        if(kh1 == null){
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
             return null;
         }
 

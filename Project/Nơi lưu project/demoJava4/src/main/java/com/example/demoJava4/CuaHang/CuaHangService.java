@@ -42,9 +42,15 @@ public class CuaHangService
     public CuaHang update(Long tKey, CuaHang t) {
         t.setId(tKey);
 
-        if(this.checkFkTonTai(t)== false || this.checkPkTonTai(tKey)==false){
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
             return null;
         }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
+            return null;
+        }
+        
         return this.cuaHangRepo.update(tKey, t);
     }
 

@@ -44,8 +44,17 @@ public class HoaDonBanService
 
     @Override
     public HoaDonBan update(Long tKey, HoaDonBan t) {
-        HoaDonBan hoaDonBan1 = this.findById(tKey);
-        return null;
+        
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
+            return null;
+        }
+
+        return this.hoaDonBanRepo.update(tKey, t);
     }
 
     @Override

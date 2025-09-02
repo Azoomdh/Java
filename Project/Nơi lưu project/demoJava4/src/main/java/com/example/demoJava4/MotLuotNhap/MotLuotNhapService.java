@@ -51,6 +51,16 @@ public class MotLuotNhapService
 
     @Override
     public MotLuotNhap update(Long tKey, MotLuotNhap t) {
+
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
+            return null;
+        }
+
         return this.motLuotNhapRepo.update(tKey, t);
     }
 

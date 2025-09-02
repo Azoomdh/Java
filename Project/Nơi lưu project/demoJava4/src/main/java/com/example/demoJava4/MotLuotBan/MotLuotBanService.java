@@ -50,6 +50,16 @@ public class MotLuotBanService
 
     @Override
     public MotLuotBan update(Long tKey, MotLuotBan t) {
+        
+        // dù chỉ 1 FK không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+        // thực thể này không tồn tại thì return null
+        if(this.checkPkTonTai(tKey)==false){
+            return null;
+        }
+
         return this.motLuotBanRepo.update(tKey, t);
     }
 
