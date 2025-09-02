@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demoJava4.CuaHang.CuaHang;
+import com.example.demoJava4.CuaHang.CuaHangService;
 import com.example.demoJava4.Interface.ServiceInterface;
+import com.example.demoJava4.NhaCungCap.NhaCungCapService;
+import com.example.demoJava4.NhanVien.NhanVienService;
 
 @Service
 public class MotLuotNhapService 
@@ -14,6 +18,15 @@ public class MotLuotNhapService
 
     @Autowired
     private MotLuotNhapRepo motLuotNhapRepo;
+
+    @Autowired
+    private NhaCungCapService nhaCungCapService;
+
+    @Autowired
+    private CuaHangService cuaHangService;
+
+    @Autowired
+    private NhanVienService nhanVienService;
 
     @Override
     public MotLuotNhap findById(Long tKey) {
@@ -38,6 +51,45 @@ public class MotLuotNhapService
     @Override
     public Boolean delete(Long tKey) {
         return this.motLuotNhapRepo.delete(tKey);
+    }
+
+    @Override
+    public Boolean checkFkTonTai(MotLuotNhap t) {
+        if(this.nhaCungCapService.checkKeyTonTai(t.getNhaCungCapid())==false ){
+            return false;
+        }
+        if(this.cuaHangService.checkKeyTonTai(t.getCuaHangid())==false ){
+            return false;
+        }
+        if(this.nhanVienService.checkKeyTonTai(t.getNhanVienUserid())==false ){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean checkPkTonTai(Long tKey) {
+        MotLuotNhap t = this.findById(tKey);
+
+        if(t==null){
+            return false;
+        }
+        
+        return true;
+    }
+
+    @Override
+    public Boolean checkKeyTonTai(Long tKey) {
+        MotLuotNhap t = this.findById(tKey);
+        
+        if(t== null){
+            return false;
+        }
+
+        if(checkFkTonTai(t)==false){
+            return false;
+        }
+        return true;
     }
 
     

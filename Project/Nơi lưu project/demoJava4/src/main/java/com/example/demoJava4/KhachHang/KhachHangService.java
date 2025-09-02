@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demoJava4.CuaHang.CuaHang;
 import com.example.demoJava4.Interface.ServiceInterface;
+import com.example.demoJava4.User.UserService;
 
 @Service
 public class KhachHangService 
@@ -14,6 +16,9 @@ public class KhachHangService
 
     @Autowired
     private KhachHangRepo khRepo;
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public KhachHang findById(Long tKey) {
@@ -55,6 +60,40 @@ public class KhachHangService
     @Override
     public Boolean delete(Long tKey) {
         return this.khRepo.delete(tKey);
+    }
+
+    @Override
+    public Boolean checkFkTonTai(KhachHang t) {
+
+        if(this.userService.checkKeyTonTai(t.getUserId())== false){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean checkPkTonTai(Long tKey) {
+        KhachHang t = this.findById(tKey);
+
+        if(t==null){
+            return false;
+        }
+        
+        return true;
+    }
+
+    @Override
+    public Boolean checkKeyTonTai(Long tKey) {
+        KhachHang t = this.findById(tKey);
+        
+        if(t== null){
+            return false;
+        }
+
+        if(checkFkTonTai(t)==false){
+            return false;
+        }
+        return true;
     }
 
     

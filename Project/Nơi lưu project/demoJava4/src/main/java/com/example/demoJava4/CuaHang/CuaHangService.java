@@ -29,14 +29,18 @@ public class CuaHangService
     public CuaHang create(CuaHang t) {
         t.setId(null);
 
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
         return this.cuaHangRepo.create(t);
     }
 
     @Override
     public CuaHang update(Long tKey, CuaHang t) {
-        CuaHang cuaHang1 = this.findById(tKey);
+        t.setId(tKey);
 
-        if(cuaHang1==null){
+        if(this.checkFkTonTai(t)== false || this.checkPkTonTai(tKey)==false){
             return null;
         }
         return this.cuaHangRepo.update(tKey, t);
@@ -44,8 +48,45 @@ public class CuaHangService
 
     @Override
     public Boolean delete(Long tKey) {
-        
+
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.cuaHangRepo.delete(tKey);
     }
 
+    @Override
+    public Boolean checkFkTonTai(CuaHang t) {
+        // cuahang không có FK
+        return true;
+    }
+
+
+    @Override
+    public Boolean checkPkTonTai(Long tKey) {
+        CuaHang t = this.findById(tKey);
+
+        if(t==null){
+            return false;
+        }
+        
+        return true;
+    }
+
+    @Override
+    public Boolean checkKeyTonTai(Long tKey) {
+        CuaHang t = this.findById(tKey);
+        
+        if(t== null){
+            return false;
+        }
+
+        if(checkFkTonTai(t)==false){
+            return false;
+        }
+        return true;
+    }
+
+    
 }

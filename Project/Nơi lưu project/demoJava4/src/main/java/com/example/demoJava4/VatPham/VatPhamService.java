@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demoJava4.CuaHang.CuaHang;
 import com.example.demoJava4.Interface.ServiceInterface;
 
 @Service
@@ -38,6 +39,36 @@ public class VatPhamService
     @Override
     public Boolean delete(Long tKey) {
         return this.vatPhamRepo.delete(tKey);
+    }
+
+    @Override
+    public Boolean checkFkTonTai(VatPham t) {
+        // vat phẩm không có Fk
+        return true;
+    }
+
+    @Override
+    public Boolean checkPkTonTai(Long tKey) {
+        VatPham t = this.findById(tKey);
+
+        if(t==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Boolean checkKeyTonTai(Long tKey) {
+        VatPham t = this.findById(tKey);
+        
+        if(t== null){
+            return false;
+        }
+
+        if(checkFkTonTai(t)==false){
+            return false;
+        }
+        return true;
     }
 
     
