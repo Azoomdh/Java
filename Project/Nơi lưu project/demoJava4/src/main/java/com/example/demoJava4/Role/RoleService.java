@@ -29,9 +29,8 @@ public class RoleService
     public Role create(Role t) {
         t.setId(null);
 
-        Role role1 = this.findByName(t.getName());
-
-        if(role1 != null){
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
             return null;
         }
 
@@ -51,6 +50,12 @@ public class RoleService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.roleRepo.delete(tKey);
     }
 

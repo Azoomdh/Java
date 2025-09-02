@@ -36,8 +36,19 @@ public class DsspBanService
 
     @Override
     public DsspBan create(DsspBan t) {
-        // không được set null
+        // không được set null id
         
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
+        // thực thể này đã tồn tại thì return null 
+        // nếu thực thể yếu đã tồn tại thì return null
+        if(this.findById(t.getDsspBanKey())!= null){
+            return null;
+        }
+
         return this.dsspBanRepo.create(t);
     }
 
@@ -53,6 +64,12 @@ public class DsspBanService
 
     @Override
     public Boolean delete(DsspBanKey tKey) {
+        
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.dsspBanRepo.delete(tKey);
     }
 

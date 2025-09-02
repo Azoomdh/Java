@@ -34,11 +34,16 @@ public class KhachHangService
     public KhachHang create(KhachHang t) {
         // PK của khachhang là FK nên không được set null
 
-        // KhachHang kh1 = this.findById(t.getUserId());
-        // // nếu đã tồn tại thì không create
-        // if(kh1 != null){
-        //     return null;
-        // }
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
+        // thực thể này đã tồn tại trong bảng thì return null;
+        // nếu thực thể yếu đã tồn tại thì return null
+        if(this.findById(t.getUserId())!=null){
+            return null;
+        }
 
         return this.khRepo.create(t);
     }
@@ -59,6 +64,12 @@ public class KhachHangService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.khRepo.delete(tKey);
     }
 

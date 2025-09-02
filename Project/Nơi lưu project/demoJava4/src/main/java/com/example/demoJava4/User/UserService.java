@@ -30,6 +30,11 @@ public class UserService
     public User create(User t) {
         t.setId(null);
         
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
         User user1 = this.findByUsername(t.getUsername());
 
         if(user1 != null){
@@ -52,6 +57,12 @@ public class UserService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.userRepo.delete(tKey);
     }
     

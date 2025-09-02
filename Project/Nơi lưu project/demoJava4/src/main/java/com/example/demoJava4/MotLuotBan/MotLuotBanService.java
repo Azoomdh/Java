@@ -38,6 +38,13 @@ public class MotLuotBanService
 
     @Override
     public MotLuotBan create(MotLuotBan t) {
+        t.setId(null);
+
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
         return this.motLuotBanRepo.create(t);
     }
 
@@ -48,6 +55,12 @@ public class MotLuotBanService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.motLuotBanRepo.delete(tKey);
     }
 

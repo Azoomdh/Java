@@ -38,9 +38,13 @@ public class RolesOfUserService
     public RolesOfUser create(RolesOfUser t) {
         // PK là FK nên không được set PK thành null
 
-        RolesOfUser rou1 = this.findById(t.getRouKey());
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
 
-        if(rou1!= null){
+        // nếu thực thể yếu đã tồn tại thì return null
+        if(this.findById(t.getRouKey())!= null){
             return null;
         }
 
@@ -60,6 +64,12 @@ public class RolesOfUserService
 
     @Override
     public Boolean delete(RolesOfUserKey tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.rouRepo.delete(tKey);
     }
     

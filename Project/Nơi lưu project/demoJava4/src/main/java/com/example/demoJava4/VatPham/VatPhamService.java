@@ -28,6 +28,13 @@ public class VatPhamService
 
     @Override
     public VatPham create(VatPham t) {
+        t.setId(null);
+
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
         return this.vatPhamRepo.create(t);
     }
 
@@ -38,6 +45,12 @@ public class VatPhamService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.vatPhamRepo.delete(tKey);
     }
 

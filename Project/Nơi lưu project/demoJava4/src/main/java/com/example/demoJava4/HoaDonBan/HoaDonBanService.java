@@ -32,6 +32,13 @@ public class HoaDonBanService
 
     @Override
     public HoaDonBan create(HoaDonBan t) {
+        t.setId(null);
+
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null; 
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
         return this.hoaDonBanRepo.create(t);
     }
 
@@ -43,6 +50,12 @@ public class HoaDonBanService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.hoaDonBanRepo.delete(tKey);
     }
 

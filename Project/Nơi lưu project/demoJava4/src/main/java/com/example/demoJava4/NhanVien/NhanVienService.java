@@ -34,11 +34,16 @@ public class NhanVienService
     public NhanVien create(NhanVien t) {
         // PK của NhanVien là FK nên không được set null
 
-        // NhanVien nv1 = this.findById(t.getUserId());        
-        // // nếu t đã tồn tại thì không create
-        // if(nv1 != null){
-        //     return nv1;
-        // }
+        // dù chỉ 1 FK của thực thể này không tồn tại thì return null;
+        if(this.checkFkTonTai(t)== false){
+            return null;
+        }
+
+        // thực thể này đã tồn tại thì return null;
+        // nếu thực thể yếu đã tồn tại thì return null
+        if(this.findById(t.getUserId())!= null){
+            return null;
+        }
 
         return this.nvRepo.create(t);
     }
@@ -58,6 +63,12 @@ public class NhanVienService
 
     @Override
     public Boolean delete(Long tKey) {
+
+        // thực thể không tồn tại thì return false;
+        if(this.checkPkTonTai(tKey)==false){
+            return false;
+        }
+
         return this.nvRepo.delete(tKey);
     }
 
