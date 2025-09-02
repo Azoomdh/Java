@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demoJava4.KhachHang.KhachHang;
 import com.example.demoJava4.KhachHang.KhachHangService;
+import com.example.demoJava4.NhanVien.NhanVien;
+import com.example.demoJava4.NhanVien.NhanVienService;
 import com.example.demoJava4.Role.Role;
 import com.example.demoJava4.Role.RoleService;
 import com.example.demoJava4.RolesOfUser.RolesOfUser;
@@ -34,6 +36,9 @@ public class LoginController {
 
     @Autowired
     private KhachHangService khachHangService;
+
+    @Autowired
+    private NhanVienService nhanVienService;
 
     @GetMapping("/register")
     public String getAtRegister(Model model){
@@ -68,8 +73,12 @@ public class LoginController {
         rou = this.rouService.create(rou);
 
         // save khách hàng của user
-        KhachHang kh = new KhachHang(user.getId());
-        kh = this.khachHangService.create(kh);
+        // KhachHang kh = new KhachHang(user.getId());
+        // kh = this.khachHangService.create(kh);
+
+        // save nhân viên của user
+        NhanVien nv = new NhanVien(user.getId());
+        nv= this.nhanVienService.create(nv);
 
         return "redirect:/login";
     }

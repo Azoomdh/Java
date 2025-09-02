@@ -19,8 +19,9 @@ public class VatPhamRowMapper
         Long gia = ketquatrave.getLong("gia");
         String donvi = ketquatrave.getString("donvi");
         String mota = ketquatrave.getString("mota");
+        String urlanh = ketquatrave.getString("urlanh");
 
-        VatPham vatPham1 = new VatPham(id, ten, gia, donvi, mota);
+        VatPham vatPham1 = new VatPham(id, ten, gia, donvi, mota, urlanh);
 
         return vatPham1;
     }

@@ -66,8 +66,8 @@ public class VatPhamRepo
 
         String sql=
             " INSERT INTO VatPham "
-            + " ( ten, gia, donvi, mota ) " 
-            + " VALUES ( ?, ?, ?, ? )";
+            + " ( ten, gia, donvi, mota, urlanh ) " 
+            + " VALUES ( ?, ?, ?, ?, ? )";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -80,6 +80,7 @@ public class VatPhamRepo
             ps.setLong(2, t.getGia());
             ps.setString(3, t.getDonvi());
             ps.setString(4, t.getMota());
+            ps.setString(5, t.getUrlanh());
 
             return ps;
         };
@@ -103,6 +104,7 @@ public class VatPhamRepo
                     + " gia = ?, "
                     + " donvi = ?, " 
                     + " mota = ? "
+                    + " urlanh = ?"
                 + " WHERE id = ? ";
 
         PreparedStatementCreator psCreator = con -> {
@@ -114,8 +116,9 @@ public class VatPhamRepo
             ps.setLong(2, t.getGia());
             ps.setString(3, t.getDonvi());
             ps.setString(4, t.getMota());
+            ps.setString(5, t.getUrlanh());
 
-            ps.setLong(5, t.getId());
+            ps.setLong(6, t.getId());
 
             return ps;
         };

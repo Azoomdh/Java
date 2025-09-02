@@ -13,21 +13,24 @@ public class VatPham
     private Long gia;
     private String donvi;
     private String mota;
+    private String urlanh;
     
     public VatPham() {
     }
-    public VatPham(Long id, String ten, Long gia, String donvi, String mota) {
+    public VatPham(Long id, String ten, Long gia, String donvi, String mota, String urlanh) {
         this.id = id;
         this.ten = ten;
         this.gia = gia;
         this.donvi = donvi;
         this.mota = mota;
+        this.urlanh = urlanh;
     }
-    public VatPham(String ten, Long gia, String donvi, String mota) {
+    public VatPham(String ten, Long gia, String donvi, String mota, String urlanh) {
         this.ten = ten;
         this.gia = gia;
         this.donvi = donvi;
         this.mota = mota;
+        this.urlanh = urlanh;
     }
 
     
