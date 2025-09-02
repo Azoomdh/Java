@@ -11,5 +11,5 @@ INSERT INTO NhanVien(Userid) VALUES (?);
 INSERT INTO Role(id, name, mota) VALUES (?, ?, ?);
 INSERT INTO RolesOfUser(Userid, Roleid) VALUES (?, ?);
 INSERT INTO [User](id, username, password, email, sodienthoai, enabled) VALUES (?, ?, ?, ?, ?, ?);
-INSERT INTO VatPham(id, ten, gia, donvi, mota) VALUES (?, ?, ?, ?, ?);
+INSERT INTO VatPham(id, ten, gia, donvi, mota, urlanh) VALUES (?, ?, ?, ?, ?, ?);
 

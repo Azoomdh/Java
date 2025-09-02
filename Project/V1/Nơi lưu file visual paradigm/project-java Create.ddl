@@ -82,11 +82,12 @@ CREATE TABLE [User] (
   enabled     bit NOT NULL, 
   PRIMARY KEY (id));
 CREATE TABLE VatPham (
-  id    bigint IDENTITY NOT NULL, 
-  ten   varchar(255) NOT NULL, 
-  gia   bigint NOT NULL, 
-  donvi nvarchar(255) NOT NULL, 
-  mota  varchar(255) NULL, 
+  id     bigint IDENTITY NOT NULL, 
+  ten    varchar(255) NOT NULL, 
+  gia    bigint NOT NULL, 
+  donvi  nvarchar(255) NOT NULL, 
+  mota   varchar(255) NULL, 
+  urlanh nvarchar(255) NOT NULL, 
   PRIMARY KEY (id));
 ALTER TABLE NhanVien ADD CONSTRAINT FKNhanVien91737 FOREIGN KEY (Userid) REFERENCES [User] (id);
 ALTER TABLE KhachHang ADD CONSTRAINT FKKhachHang878764 FOREIGN KEY (Userid) REFERENCES [User] (id);
