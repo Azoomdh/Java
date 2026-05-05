@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>details</title>
+</head>
+<body>
+    <h1>Chi tiết</h1>
+    <div th:object="${vatpham}">
+
+        <table border="1">
+            <tr>
+                <td>
+                    <p>id</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.id}"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Tên</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.ten}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Giá</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.gia}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Đơn vị</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.donvi}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Mô tả</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.mota}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Ảnh</p>
+                </td>
+                <td>
+                    <img th:src="@{ ${vatpham.urlanh} }" style="height: 100px;" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Số lượng còn lại</p>
+                </td>
+                <td>
+                    <p th:text="${vatpham.soluong}"></p>
+                </td>
+            </tr>
+
+        </table>
+
+        <form 
+            th:action="@{/dsspBan/chooseMotLuotBan }" 
+            method="get"
+            th:object="${}"
+        >
+            <!--  -->
+        </form>
+    </div>
+
+
+    <!-- <a th:href="@{/update/vatpham/{id} (id=${vatpham.id}) }">update</a>
+    <a th:href="@{/delete/vatpham/{id} (id=${vatpham.id}) }">delete</a> -->
+</body>
+</html>

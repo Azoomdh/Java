@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create vat pham</title>
+</head>
+<body>
+    <h1>Tạo vật phẩm</h1>
+    <form th:action="@{/create/vatpham}" th:object="${vatphamDto}" method="post" enctype="multipart/form-data" >
+        <table>
+            <tr>
+                <td>
+                    <label for="ten">Tên:</label>
+                </td>
+                <td>
+                    <input type="text" id="ten" th:field="*{ten}" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="gia">Giá:</label>
+                </td>
+                <td>
+                    <input type="number" id="gia" th:field="*{gia}" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="donvi">Đơn vị:</label>
+                </td>
+                <td>
+                    <input type="text" id="donvi" th:field="*{donvi}" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="mota">Mô tả:</label>
+                </td>
+                <td>
+                    <textarea id="mota" th:field="*{mota}"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="anh">Ảnh:</label>
+                </td>
+                <td>
+                    <input type="file" id="anh" th:field="*{anh}" accept="image/*">
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit">Lưu</button>
+    </form>
+    
+</body>
+</html>

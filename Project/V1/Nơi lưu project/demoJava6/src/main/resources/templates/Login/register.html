@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+    <form th:action="@{/register}" method="post" th:object="${user1}">
+        <table border="1">
+            <tr>
+                <td>
+                    <label>username</label>
+                </td>
+                <td>
+                    <input type="text" th:field="*{username}" placeholder="username" required="true" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>password</label>
+                </td>
+                <td>
+                    <input type="password" th:field="*{password}" placeholder="password" required="true"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>email</label>
+                </td>
+                <td>
+                    <input type="email" th:field="*{email}" placeholder="email" required="true"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>sodienthoai</label>
+                </td>
+                <td>
+                    <input type="tel" th:field="*{sodienthoai}" placeholder="sodienthoai" required="true"/>
+                </td>
+            </td>
+        </table>
+
+        <button type="submit">register</button>
+    </form>
+</body>
+</html>

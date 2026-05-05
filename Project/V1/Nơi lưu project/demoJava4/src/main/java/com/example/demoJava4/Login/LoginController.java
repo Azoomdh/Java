@@ -73,8 +73,16 @@ public class LoginController {
         rou = this.rouService.create(rou);
 
         // save khách hàng của user
-        // KhachHang kh = new KhachHang(user.getId());
-        // kh = this.khachHangService.create(kh);
+        KhachHang kh = new KhachHang(user.getId());
+        kh = this.khachHangService.create(kh);
+
+        // tìm id của role client
+        Role nvRole = this.roleService.findByName("NHANVIEN");
+
+        // save role client của user
+        RolesOfUserKey rouKey2 = new RolesOfUserKey(user.getId(), nvRole.getId());
+        RolesOfUser rou2 = new RolesOfUser(rouKey2);
+        rou2 = this.rouService.create(rou2);
 
         // save nhân viên của user
         NhanVien nv = new NhanVien(user.getId());
